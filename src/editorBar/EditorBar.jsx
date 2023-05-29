@@ -192,7 +192,7 @@ export default function ToolBar({ printDiv }) {
             id="imageUpload"
             type="file"
             accept="image/*"
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
             onChange={handleFileUpload}
           />
         </div>

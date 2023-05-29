@@ -11,8 +11,7 @@ export default function HomePage() {
   const [pdfName, setPdfName] = useState("");
 
   const printDiv = useRef();
-
-  async function handleDownload() {
+   async function handleDownload() {
     const sheetContent = document.getElementById(`printablediv`);
     const canvas = await html2canvas(sheetContent, { dpi: 300 });
     const imageData = canvas.toDataURL("image/png", 1.0);
