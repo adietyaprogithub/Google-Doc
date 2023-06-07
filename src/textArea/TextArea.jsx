@@ -2,10 +2,12 @@ import React, { useState, useRef } from "react";
 import ToolBar from "../editorBar/EditorBar";
 import style from "./TextArea.module.css";
 import { HiDownload } from "react-icons/hi";
-import jsPDF from "jspdf";
+import jsPDF from "jspdf";                       // library
 import html2canvas from "html2canvas";
 import { useRecoilValue } from "recoil";
 import { documentName } from "../menuBar/Atom";
+
+
 export default function HomePage() {
   const title = useRecoilValue(documentName);
   const [pdfName, setPdfName] = useState("");
@@ -25,9 +27,6 @@ export default function HomePage() {
     pdfDoc.save(`${pdfName || title}.pdf`);
   }
 
-  function handleInputChange(event) {
-    setPdfName(event.target.value);
-  }
 
   return (
     <div>
